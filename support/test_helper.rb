@@ -7,7 +7,6 @@ require 'byebug'
 require 'json'
 require 'socket'
 require 'base64'
-require 'uri'
 require 'net/http'
 require 'dotenv/load'
 
