@@ -45,11 +45,11 @@ include RequestHelper
    			assert_equal(String, JSON.parse(last_response.payload).fetch(x).class,
    				'FAIL: Incorrect Value Class found for Key: ' + x)
    		#D: Verify year matches correct format
-   		assert(JSON.parse(last_response.payload).fetch(x).match('[\d{4}]'), 'FAIL: Year is not 4 Numbers')
-   	else 
-   		assert_equal(String, JSON.parse(last_response.payload).fetch(x).class,
+   			assert(JSON.parse(last_response.payload).fetch(x).match('[\d{4}]'), 'FAIL: Year is not 4 Numbers')
+   		else 
+   			assert_equal(String, JSON.parse(last_response.payload).fetch(x).class,
    			'FAIL: Incorrect Value Class found for Key: ' + x)
-   	end
+   		end
    	}
  	end
 
@@ -116,12 +116,12 @@ include RequestHelper
   		"My Little Pony", "The Smurfs", "Thomas the Tank Engine", 
   		"The Flintstones", "Tom and Jerry", "Curious George", "Daniel Tiger's Neighborhood", 
   		"Dora the Explorer", "PJ Masks"]
-  		cartoon_data_array = []
-  		cartoons.each {|cartoon|
-  			total_episodes_per_cartoon = 0
-  			request('GET', '?', {params: {'apikey' => ENV['OMDBKEY'], 's' => cartoon, "type" => "series"}},
-  				'http://www.omdbapi.com/')
-  			page_one_series = JSON.parse(last_response.payload).fetch("Search")
+  	cartoon_data_array = []
+  	cartoons.each {|cartoon|
+  		total_episodes_per_cartoon = 0
+  		request('GET', '?', {params: {'apikey' => ENV['OMDBKEY'], 's' => cartoon, "type" => "series"}},
+  			'http://www.omdbapi.com/')
+  		page_one_series = JSON.parse(last_response.payload).fetch("Search")
   		# find out how man series have been made for each cartoon (was seeing 11 Mickey Mouse series)
   		total_series = JSON.parse(last_response.payload).fetch("totalResults")
   		# calculate how many pages the series will take (1-10 = 1, 11-20 = 2)
