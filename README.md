@@ -11,10 +11,10 @@ It is time to run some tests against OMDb API - The Open Movie Database!
 - Unique or helpful information should be documented in the readme.
 
 Chris Luhring Additions: 
-require 'uri'
-require 'net/http'
-require 'dotenv/load' - '[gem install dotenv](https://github.com/bkeepers/dotenv, 'Title') 
-The gem allows you to hide your API keys in a .env file which saves your OMDBKEY='your omdb api key'
+ - require 'uri'
+ - require 'net/http'
+ - require 'dotenv/load' - '[gem install dotenv](https://github.com/bkeepers/dotenv, 'Title')'
+The gem allows you to hide your API keys in a .env file which saves your OMDBKEY='*your omdb api key*'.
 My .env file is saved in the suite folder. 
 
 ## Tasks:
