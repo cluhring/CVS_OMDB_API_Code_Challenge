@@ -3,7 +3,7 @@ require File.expand_path('../support/test_helper', __dir__)
 require 'minitest/autorun'
 
 class ApiTest < Minitest::Test
-	include RequestHelper
+include RequestHelper
 
 	def test_no_api_key
 		request('GET', '?', {params: {'apikey' => '', 't' => 'Space Jam'}}, 'http://www.omdbapi.com/')
