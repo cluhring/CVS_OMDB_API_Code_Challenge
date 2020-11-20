@@ -50,8 +50,8 @@ class ApiTest < Minitest::Test
    		assert_equal(String, JSON.parse(last_response.payload).fetch(x).class,
    			'FAIL: Incorrect Value Class found for Key: ' + x)
    	end
-   }
- end
+   	}
+ 	end
 
   #4: Add a test that uses the i parameter to verify each title on page 1 is accessible via imdbID
   def test_api_key_name_equals_thomas											#Parks and Rec
@@ -168,5 +168,4 @@ class ApiTest < Minitest::Test
   	ranked_cartoons = cartoon_data_array.sort_by{|k,v| -v}
   	assert_equal('The Simpsons', ranked_cartoons[0][0], "FAIL: The Simpsons was overtaken by " + ranked_cartoons[0][0])
   end	
-
 end
